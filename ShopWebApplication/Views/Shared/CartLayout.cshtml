@@ -1,0 +1,159 @@
+﻿@using ShopWebApplication.Models
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="~/css/Home.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://use.fontawesome.com/1eaef4f5cb.js"></script>
+    <link href="~/Scripts/jquery.unobtrusive-ajax.min.js" />
+
+    <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+
+<body style="background-color: #f7f7f7 !important;">
+    <div>
+        <div class="header">
+            <div class="khung-logo">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-2">
+                            <a href="~/Home/Index"><img class="img-fluid" src="~/Image/iconHome/logo.png" alt="logo" /></a>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6 thanh-tim-kiem">
+                            <div id="form_timkiem_13">
+                                <div class="otimkiem_div">
+                                    <input id="otimkiem_13" class="otimkiem" value="Tìm kiếm" /><i class="fa fa-search" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        @Html.Action("CartPatial", "Cart")
+
+                        <div class="col-xs-6 col-md-2 tai-khoan ">
+                            @if (Session["taiKhoan"] != null)
+                            {
+                                Customer tk = (Customer)Session["taiKhoan"];
+                                <i style="color:#fe708a " class="fa fa-user-o "></i>
+                                <span>@tk.CustomerName</span><br />
+                                <a href="/Customer/LogOut">Đăng Xuất</a>
+                            }
+                            else
+                            {
+                                <i style="color:#fe708a " class="fa fa-user-o "></i>
+                                <strong style="color: #000;">Tài khoản</strong>
+                                <br />
+                                <span style="font-size:12px;color:#777">
+                                    <a href="/Customer/Login">Đăng nhập</a>,
+                                    <a href="/Customer/Register">Đăng ký</a>
+                                </span>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navHeader">
+            <nav class="navbar  ">
+                <div class="container">
+                    <div class="col-250">
+                        <div class="dropdowncus left">
+                            <button class="dropbtncus"><i class="fa fa-bars"></i> <strong>DANH MỤC SẢN PHẨM</strong></button>
+
+                        </div>
+                    </div>
+                    <div class="col-700 pull-left">
+                        <div id="navbar" class="navbar navbar-expand-sm ">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#"><i class="fa fa-star-o"></i> BÁN CHẠY</a></li>
+                                <li><a href="#"><i class="fa fa-calendar-o"></i> SỰ KIỆN</a></li>
+                                <li><a href="#"><i class="fa fa-check-square-o"></i> KIỂM TRA ĐƠN HÀNG</a></li>
+                                <li><a href="#"><i class="fa fa-calendar"></i> LIÊN HỆ</a></li>
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+        @RenderBody()
+        
+        <div class="menu-bottom " >
+            <div class="container ">
+                <div class="row " style="display:flex; align-items:center">
+                    <div class="col-md-3 " style="border-right:1px solid #FFF;height:20px ">
+                        <p><i class="fa fa-motorcycle "></i> Đơn hàng trên 2 triệu miễn Ship</p>
+                    </div>
+                    <div class="col-md-3 textcenter " style="border-right:1px solid #FFF;height:20px ">
+                        <p><i class="fa fa-refresh "></i> Hoàn tiền trong vòng 07 ngày</p>
+                    </div>
+                    <div class="col-md-3 textcenter " style="border-right:1px solid #FFF;height:20px ">
+                        <p><i class="fa fa-phone "></i> Hotline: 0914 46 42 44</p>
+                    </div>
+                    <div class="col-md-3 textcenter " style="height:20px; ">
+                        <p><i class="fa fa-envelope-o "></i> Email:tocdo@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="footer-custom ">
+                <div class="container ">
+                    <div class="row ">
+                        <div class="col-md-3 ">
+                            <h3>THÔNG TIN HỖ TRỢ</h3>
+                            <p><a href="http://net-121pm.web7b.com/# ">Giới thiệu</a></p>
+                            <p><a href="http://net-121pm.web7b.com/# ">Tuyển dụng</a></p>
+                            <p><a href="http://net-121pm.web7b.com/# ">Góp ý &amp; khiếu nại</a></p>
+                            <p><a href="http://net-121pm.web7b.com/# ">Liên hệ</a></p>
+                        </div>
+                        <div class="col-md-3 ">
+                            <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+                            <p><a href="http://net-121pm.web7b.com/# ">Chính sách giao hàng</a></p>
+                            <p><a href="http://net-121pm.web7b.com/# ">Chính sách đổi sản phẩm</a></p>
+                            <p><a href="http://net-121pm.web7b.com/# ">Chính sách bảo hành</a></p>
+                            <p><a href="http://net-121pm.web7b.com/# ">Chính sách trả góp</a></p>
+                        </div>
+                        <div class="col-md-3 ">
+                            <h3>ĐƯỜNG GIÂY NÓNG</h3>
+                            <p>Bán hàng (8:30 - 21:00)</p>
+                            <p><strong style="color:#fe708a;font-size:17px ">0914 46 42 44</strong></p>
+                            <p>Góp ý, khiếu nại (8:30 - 17:00)</p>
+                            <p><strong style="color:#fe708a;font-size:17px ">01652 833 656</strong></p>
+                        </div>
+                        <div class="col-md-3 ">
+                            <h3>ĐĂNG KÝ NHẬN ƯU ĐÃI</h3>
+                            <div class="newsletter " id="newsletter ">
+                                <span class="nhan_newsletter ">Điền email bạn muốn nhận khuyến mại và các bản tin mới nhất</span>
+                                <input style="margin:5px 0px; " id="email_newsletter " type="text " value=" " /><br />
+                                <input id="gui_tin " value="Nhận tin " type="button " class="btn" /></a>
+                                <div id="newsletter_echo "></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+</body>
+</html>

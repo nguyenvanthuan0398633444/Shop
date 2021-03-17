@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ShopWebApplication.Models.Product>
+@using ShopWebApplication.Models
+@{
+    Layout = "~/Views/Shared/Homelayout.cshtml";
+}
+<div class="bocuc bocuc_27 ">
+    <div class="loprong ">
+        <div class="padding ">
+            <div class="sanpham_box ">
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                        <li id="sp_27_10 ">
+                            <div class="div_noidung ">
+                                <div class="truong anh ">
+                                    <a href="http://net-121pm.web7b.com/ao-dai-cach-tan-sara-mau-den-theu-hoa-id1.html ">
+                                        <img alt="" class="lazy anh_sanpham_danhsach " data-src=" " src="@Url.Content("~/Content/Image/"+ item.PhotoPath) " />
+                                    </a>
+                                </div>
+                                <div class="phantram "><span class="so_phantram ">10</span> <span class="dau_phantram ">%</span></div>
+                                <h2 class="truong tieude "><a>@item.ProductName</a></h2>
+                                <div class="ochua100 ">
+                                    <div class="gia "><strong>@item.Price</strong> <span>VND</span></div>
+
+                                </div>
+                                <a href=" @Url.Action("AddCart", "Cart",new { @Ids = item.ProductID, @url = Request.Url.ToString() } ) ">
+                                    <div class="truong nutmuahang "><label class="nut_dat " onclick=" dathang(1); "><span><i class="far fa-shopping-cart " aria-hidden="true"></i> Mua hàng</span></label></div>
+                                </a>
+                               
+                            </div>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+   

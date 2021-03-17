@@ -1,0 +1,46 @@
+﻿
+.form-group {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: space-between;
+    margin: 0
+}
+
+.form-index {
+    border-radius: 1rem 0 0 1rem;
+}
+
+.seach {
+    border-radius: 0 1rem 1rem 0;
+}
+
+.new {
+    margin: 0 1rem 0 1rem;
+}
+
+.py-3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+td.but {
+    /* display: flex; */
+    /* justify-content: space-around; */
+    /* height: 75px; */
+}
+
+.productNew {
+    margin: 2rem 0 2rem 0;
+}
+
+.dlink1 li.page-item a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.dlink1 li.page-item:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}

@@ -1,0 +1,86 @@
+﻿@*@model IEnumerable<ShopWebApplication.Models.Product>*@
+@using ShopWebApplication.Models
+@using PagedList.Mvc
+@model PagedList.IPagedList<Category>
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="table card shadow mb-4">
+        <div class="card-header py-3">
+            <h4 class="m-0 font-weight-bold text-primary">CATEGORY</h4>
+            <form action="/Category/Index" class="form-group">
+                <div class="form-group  ">
+                    <div style=" display: flex; flex-wrap: nowrap;">
+                        <input type="text" class="form-control form-index" id="usr" name="seach" placeholder="nhập sản phẩm cần tìm">
+                        <button type="submit" class="btn btn-outline-primary seach"><i class="fas fa-search "></i></button>
+                    </div>
+                    <button type="button" class="btn btn-success new">
+                        @Html.ActionLink("New Category", "NewCategory")
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>DESCRIPTION</th>
+                           
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CategoryName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td class="but">
+                                    <button type="button" class="btn btn-outline-warning">
+                                        @Html.ActionLink("Edit", "EditCategory", new { id = item.CategoryID })
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">
+                                        <a href="/category/deleteCategory/@item.CategoryID" Onclick="return ConfirmDelete();">Delete</a>                                      
+                                    </button>
+
+                                    <script>
+                                        function ConfirmDelete() {
+                                            var x = confirm("Are you sure you want to delete?");
+                                            if (x)
+                                                return true;
+                                            else
+                                                return false;
+                                        }
+                                    </script>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="dlink1">
+                     Trang @( Model.PageCount<Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+                     @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions
+                    {
+                       DisplayLinkToIndividualPages = true,
+                       DisplayPageCountAndCurrentLocation = false,
+                       MaximumPageNumbersToDisplay = 10,
+                       LiElementClasses = new string[] { "page-item" }
+                   })
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

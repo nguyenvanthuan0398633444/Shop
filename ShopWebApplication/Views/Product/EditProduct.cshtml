@@ -1,0 +1,92 @@
+﻿@model ShopWebApplication.Models.Product
+@{
+    ViewBag.Title = "EditProduct";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@using (Html.BeginForm("EditProduct", "Product", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Edit Product</h4>
+    @Html.ValidationSummary(true)
+    @Html.Hidden("ProductId", Model.ProductID)
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group ">
+        @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "control-label col-md-1" })
+        <div class="col-md-5">
+            @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+        </div>
+        @Html.LabelFor(model => model.SupplierID, htmlAttributes: new { @class = "control-label col-md-1" })
+        <div class="col-md-5">
+            @Html.DropDownList("SupplierID", null, new { @class = "form -control col-md-12" })
+            @Html.ValidationMessageFor(model => model.SupplierID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class=" form-group productNew">
+        @Html.LabelFor(model => model.DateAdded, htmlAttributes: new { @class = "control-label col-md-1" })
+        <div class="col-md-5">
+            @Html.EditorFor(model => model.DateAdded, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DateAdded, "", new { @class = "text-danger" })
+        </div>
+        @Html.LabelFor(model => model.CategoryID, htmlAttributes: new { @class = "control-label col-md-1 " })
+        <div class="col-md-5">
+            @Html.DropDownList("CategoryID", null, new { @class = "form -control col-md-12" })
+            @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group productNew">
+        @Html.LabelFor(model => model.Descriptions, htmlAttributes: new { @class = "control-label col-md-1" })
+        <div class="col-md-11">
+            @Html.EditorFor(model => model.Descriptions, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Descriptions, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group productNew">
+        @Html.LabelFor(model => model.PurchasePrice, htmlAttributes: new { @class = "control-label col-md-1" })
+        <div class="col-md-2">
+            @Html.EditorFor(model => model.PurchasePrice, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PurchasePrice, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-1" })
+        <div class="col-md-2">
+            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-1" })
+        <div class="col-md-2">
+            @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.Sold, htmlAttributes: new { @class = "control-label col-md-1" })
+        <div class="col-md-2">
+            @Html.EditorFor(model => model.Sold, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Sold, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group productNew">
+        @Html.LabelFor(model => model.PhotoPath, new { @class = "control-label col-md-1" })
+        <div class="col-md-10">
+            <input id="PhotoPath" name="PhotoPath" type="file" value="@Model.PhotoPath" />
+            <span>@ViewBag.upload</span>
+            <br />
+            <img src="@Url.Content("~/Content/Image/"+ Model.PhotoPath)" style="margin-top:1rem; height:10rem; width:20rem;" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="button" class="btn btn-secondary">@Html.ActionLink("Back to List", "Index")</button>
+            <input type="submit" value="SAVE" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}
+

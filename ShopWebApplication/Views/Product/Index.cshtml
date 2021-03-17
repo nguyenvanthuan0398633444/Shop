@@ -1,0 +1,128 @@
+﻿@*@model IEnumerable<ShopWebApplication.Models.Product>*@
+@using ShopWebApplication.Models
+@using PagedList.Mvc
+@model PagedList.IPagedList<Product>
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="table card shadow mb-4">
+        <div class="card-header py-3">
+            <h4 class="m-0 font-weight-bold text-primary">PRODUCT</h4>
+            <form action="/product/Index" class="form-group">
+                <div class="form-group  ">
+                    <div style=" display: flex; flex-wrap: nowrap;">
+                        <input type="text" class="form-control form-index" id="usr" name="seach" placeholder="nhập sản phẩm cần tìm">
+                        <button type="submit" class="btn btn-outline-primary seach"><i class="fas fa-search "></i></button>
+                    </div>                   
+                    <button type="button" class="btn btn-success new">
+                        @Html.ActionLink("New Product", "NewProduct")
+                    </button>
+                </div>
+            </form>            
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>SUPPLIER</th>
+                            <th>CATEGORY</th>
+                            <th>DESCRIPTIONS</th>
+                            <th>PHOTO PATH</th>
+                            <th>DATE ADDED</th>
+                            <th>PURCHASE PRICE</th>
+                            <th>PRICE</th>
+                            <th>AMOUNT</th>
+                            <th>SOLD</th>
+                            @*<th>@Html.DisplayNameFor(model => model.Supplier)</th>
+                           <th> @Html.DisplayNameFor(model => model.PhotoPath)</th>*@
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProductName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Supplier.SupplierName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descriptions)
+                            </td>
+                            <td>
+                               
+                                <img style="" src="@Url.Content("~/Content/Image/"+ item.PhotoPath)" width="100em" height="50em" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateAdded)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PurchasePrice)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Amount)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Sold)
+                            </td>
+                            <td>
+                                <a href="/Product/EditProduct/@item.ProductID"> <i class="fas fa-edit fa-2x" style="color: #109ff3"></i></a>
+                                <a href="/product/deleteProduct/@item.ProductID" Onclick="return ConfirmDelete();"><i class="fas fa-trash-alt fa-2x" style="color: red"></i></a>
+                                <script>
+                                    function ConfirmDelete() {
+                                        var x = confirm("Are you sure you want to delete?");
+                                        if (x)
+                                            return true;
+                                        else
+                                            return false;
+                                    }
+                                </script>
+                            </td>                            
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="dlink1">
+                    Trang @( Model.PageCount<Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions
+              {
+                       DisplayLinkToIndividualPages = true,
+                       DisplayPageCountAndCurrentLocation = false,
+                       MaximumPageNumbersToDisplay = 10,
+                       LiElementClasses = new string[] { "page-item" }
+                      
+
+                   })
+                </div>
+                @*<ul class="pagination">
+                    @{ 
+                        int i, j, k;
+                    }
+                    <li class="page-item"><a class="page-link" href="/Product?Page=@j">Previous</a></li>
+                    @for( i=1; i <= Model.PageCount; i++)
+                    {
+                        <li class="page-item"><a class="page-link" href="/Product?Page=@i "> @i</a></li>
+                    }
+                    <li class="page-item"><a class="page-link" href="/Product?Page=@k">Next</a></li>
+                </ul>*@
+            </div>
+        </div>
+    </div>
+
+</div>

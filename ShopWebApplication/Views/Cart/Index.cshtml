@@ -1,0 +1,62 @@
+﻿@using ShopWebApplication.Models;
+@model List<Cart>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/CartLayout.cshtml";
+}
+<div class="container">
+    <table class="table table table-hover" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Ảnh</th>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th>Số Lượng </th>
+                <th> Thành Tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{int i = 0; }  
+            @foreach (var item in Model)
+            {
+                
+            <tr>
+                <td>
+                    <img alt="" class="anh_sanpham_danhsach" src="~/Content/Image/@item.photo" width="20%">
+                </td>
+                <td>
+                    <p>@item.name</p>
+                </td>
+                <td>
+                    <div class="thanhtien thanhtien_10_0_0"><span>@item.cost </span> VND</div>
+                </td>
+                <td>
+                    <div class="osoluong">
+                          <div class="buttons_added">
+                            <input class="minus is-form" type="button" value="-" onclick="document.getElementById('@i.ToString()').value=parseInt(document.getElementById('@i.ToString()').value)-1">
+                            <input id="@i.ToString()" aria-label="quantity" class="input-qty" max="Số tối đa" min="Số tối thiểu" name="" type="number" value="@item.count">
+                            <input class="plus is-form" type="button" value="+" onclick="document.getElementById('@i.ToString()').value=parseInt(document.getElementById('@i.ToString()').value)+1">
+                        </div>
+                        <script>
+                            
+                        </script>
+                    </div>
+                </td>
+                <td>
+                    <div class="thanhtien thanhtien_10_0_0"><span>@item.intoMoney.ToString()</span> VND</div>
+                </td>
+                <td><a href="/Cart/DeleteCart?ids=@item.Id"><i class="fal fa-trash-alt"></i></a></td>
+            </tr>
+                i++;
+            }                    
+        </tbody>
+    </table>         
+    <hr />
+    <div class="giohang_tinhtong" style="display: flex; justify-content: space-between;margin:25px;">
+        <a class="btn btn-info">Đặt Mua</a>
+        <span class="giohang_tongcong" style="color:red;"> <strong class="label_cot_tongcong"> Tổng cộng: @ViewBag.sumMoney.ToString("#,##") VND</strong></span>
+        <input type="hidden" id="ptgg" value="">
+
+    </div>
+</div> 
+>

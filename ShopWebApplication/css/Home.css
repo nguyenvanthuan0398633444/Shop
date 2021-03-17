@@ -1,0 +1,489 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.khung-logo {
+    width: 100%;
+    height: auto;
+    padding: 20px 0px;
+    background-color: #efefef;
+}
+
+    .khung-logo .row {
+        display: flex;
+        align-items: center;
+    }
+
+#otimkiem_13 {
+    width: calc(100% - 37px);
+    padding: 3px 5px;
+    border: 1px solid #fe708a;
+    border-right: none;
+    border-radius: 5px 0px 0px 5px;
+    color: #777;
+    font-style: italic;
+    outline: none
+}
+
+#form_timkiem_13 .fa {
+    width: 35px;
+    height: 32px;
+    font-size: 17px;
+    padding: 7px 10px 10px;
+    background-color: #fe708a;
+    color: #FFF;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.giohang_box .fa {
+    font-size: 35px
+}
+
+.giohang_box {
+    font-size: 13px
+}
+
+.navbar {
+    background-color: #fe708a !important;
+    margin-bottom: 0px !important;
+    min-height: 30px !important;
+    padding: 0px !important;
+}
+
+.col-700 {
+    width: 60%;
+}
+
+.col-250.right {
+    position: relative;
+    right: 15%;
+    top: -30px;
+}
+
+.col-700.pull-left {
+    position: relative;
+    left: -122px;
+}
+
+    .col-700.pull-left ul li {
+        padding: 0 10px;
+        color: aliceblue;
+    }
+
+        .col-700.pull-left ul li a {
+            color: aliceblue;
+        }
+
+.quangCao {
+    width: 58.5%;
+    position: relative;
+    left: 272px;
+}
+
+.dropdowncus-content a {
+    color: black;
+    padding: 7px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+    .dropdowncus-content a:hover {
+        border-left: 2px solid #fe708a
+    }
+
+.dropbtncus {
+    color: white;
+    padding: 5px 10px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    background-color: #ff9d06;
+    margin-left: -14px;
+}
+
+.dropdowncus-content {
+    display: none;
+    position: absolute;
+    background-color: #FFF;
+    width: 107%;
+    z-index: 9999;
+    height: 409px;
+    cursor: move;
+    margin-left: -14px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+.bocuc {
+    position: relative
+}
+
+.paging .link_dang_chon {
+    background: #ccc;
+    color: #fff !important;
+}
+
+.bocuc_16 > .loprong {
+    width: 1170px;
+    margin: 0 auto
+}
+
+.main {
+    width: 102%;
+}
+
+.bocuc_26 {
+    display: inline-block;
+    width: 210px;
+    vertical-align: top
+}
+
+.bocuc_27 {
+    display: inline-block;
+    width: 960px;
+    vertical-align: top
+}
+
+
+    .bocuc_27 .tieude a {
+        color: inherit;
+        font-size: small;
+        font-weight: normal
+    }
+
+    .bocuc_27 .gia {
+        font-size: small;
+        font-weight: normal
+    }
+
+    .bocuc_27 .sanpham_box ul {
+        padding: 0;
+        margin: 0;
+        list-style: none
+    }
+
+    .bocuc_27 .sanpham_box li {
+        width: 19.5%;
+        display: inline-block;
+        vertical-align: top;
+        clear: both;
+        text-align: center;
+    }
+
+
+    .bocuc_27 .gia {
+        display: inline-block;
+        width: 50%
+    }
+
+    .bocuc_27 .nutmuahang span {       
+        color: #FFF;
+        padding: 5px 10px
+    }
+
+    .bocuc_27 .giacu {
+        display: inline-block;
+        width: 50%;
+        text-decoration: line-through
+    }
+
+    .bocuc_27 img {
+        max-width: 100%;
+        max-height: 100%
+    }
+
+.bocuc_18 > .loprong {
+    width: 1170px;
+    margin: 0 auto
+}
+
+a:hover {
+    text-decoration: none !important
+}
+
+.container {
+    margin: 0 auto !important;
+    padding: 0 !important
+}
+
+.col-210 {
+    width: 210px;
+    height: auto;
+    float: left;
+    display: table
+}
+
+.col-186 {
+    width: 186px;
+    height: auto;
+    float: left;
+    display: table
+}
+
+.col-auto {
+    width: auto;
+    height: auto;
+    float: left;
+    display: table
+}
+
+
+
+.box-row {
+    width: 100%;
+    height: 200px;
+}
+
+.slider-index {
+    width: 100%;
+    height: 400px;
+    margin: auto;
+    z-index: -1;
+    padding-left: 210px;
+}
+
+.quangcao-index {
+    width: 100%;
+    height: auto;
+    display: table;
+    margin: 15px 0px
+}
+
+    .quangcao-index img {
+        padding: 5px;
+        background: #FFF
+    }
+
+.box-danhmuc {
+    width: 100%;
+    height: auto;
+    display: table
+}
+
+    .box-danhmuc a {
+        color: #333333 !important
+    }
+
+    .box-danhmuc .arrow {
+        border-top: 22px solid transparent;
+        border-left: 9px solid;
+        border-bottom: 22px solid transparent;
+        position: absolute;
+        height: 0;
+        width: 0;
+        top: 0;
+        left: 34px;
+    }
+
+    .box-danhmuc .box-header {
+        width: 100%;
+        height: auto;
+        background-color: #f14976;
+        color: #FFF
+    }
+
+    .box-danhmuc .box {
+        padding: 10px
+    }
+
+    .box-danhmuc .xemtatca {
+        padding: 10px 20px;
+        color: #fe708a;
+        border: 2px solid #fe708a;
+        text-align: center
+    }
+
+    .box-danhmuc img {
+        padding: 10px 5px;
+        background: #dc063f;
+        margin-right: 40px;
+    }
+
+.sanpham_box .anh {
+    padding: 15px
+}
+
+.sanpham_box {
+    border-top: 2px solid #fe708a
+}
+
+    .sanpham_box li {
+        border-left: 1px solid #F7F7F7 !important;
+        border-bottom: 1px solid #f7f7f7;
+        min-height: 425px;
+        overflow: hidden
+    }
+
+    .sanpham_box h2 {
+        margin-top: 0px !important
+    }
+
+    .sanpham_box .tieude {
+        line-height: 13px !important
+    }
+
+
+
+
+.gia {
+    color: #fe708a !important;
+    font-weight: bold !important
+}
+
+
+
+.sanpham_box li .nutmuahang {
+    display: none
+}
+
+.sanpham_box li:hover .nutmuahang {
+    display: block;
+    background-color: #fe708a !important;
+    width: 70%;
+    margin: auto;
+    padding: 5px;
+    border-radius: 5px;
+    /* position: relative; */
+    /* bottom: -40px; */
+}
+
+.dropdowncus {
+    position: relative;
+    background-color: #ff9d06;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.hidden-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    height: 440px;
+    margin-top: 39px;
+}
+
+.dropdowncus-content a {
+    color: black;
+    padding: 7px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+    .dropdowncus-content a:hover {
+        border-left: 2px solid #fe708a
+    }
+
+.dropbtncus {
+    color: white;
+    padding: 5px 10px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    background-color: #ff9d06;
+    margin-left: 0px;
+}
+
+.dropdowncus-content {
+    display: none;
+    position: absolute;
+    background-color: #FFF;
+    width: 100%;
+    z-index: 9999;
+    height: 409px;
+    cursor: move;
+    margin-left: 0px;
+}
+
+.menu-bottom {
+    width: 100%;
+    height: auto;
+    background: #fe708a;
+    color: #FFF;
+    padding: 10px;
+}
+
+.bottom h3 {
+    font-size: 1em;
+    margin-top: 1.5em;
+}
+
+.bottom a {
+    color: black;
+}
+
+input#email_newsletter\ {
+    width: 100%;
+    border: 1px solid #fe708a;
+    padding: 5px 10px;
+    outline: none;
+    color: #999;
+}
+
+input#gui_tin\ {
+    background-color: #fe708a;
+    width: 50%;
+}
+ /*nut tang giam*/
+.buttons_added {
+    opacity: 1;
+    display: inline-block;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.is-form {
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
+    height: 2.2rem;
+   
+    width: 1.9rem;
+    padding: 0;
+    text-shadow: 1px 1px 1px #fff;
+    border: 1px solid #ddd;
+}
+
+    .is-form:focus, .input-text:focus {
+        outline: none;
+    }
+
+    .is-form.minus {
+        border-radius: 4px 0 0 4px;
+    }
+
+    .is-form.plus {
+        border-radius: 0 4px 4px 0;
+    }
+
+.input-qty {
+    background-color: #fff;
+    height: 2.2rem;
+    width: 4rem;
+    text-align: center;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: 0;
+    border-right: 0;
+    padding: 0;
+}
+
+    .input-qty::-webkit-outer-spin-button, .input-qty::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
