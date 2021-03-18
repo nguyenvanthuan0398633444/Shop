@@ -29,7 +29,7 @@
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
+                    <thead class="thead-dark">
                         <tr>
                             <th>NAME</th>
                             <th>SUPPLIER</th>
@@ -41,8 +41,6 @@
                             <th>PRICE</th>
                             <th>AMOUNT</th>
                             <th>SOLD</th>
-                            @*<th>@Html.DisplayNameFor(model => model.Supplier)</th>
-                           <th> @Html.DisplayNameFor(model => model.PhotoPath)</th>*@
                             <th></th>
                         </tr>
                     </thead>
@@ -60,11 +58,11 @@
                                 @Html.DisplayFor(modelItem => item.Category.CategoryName)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Descriptions)
+                                @Html.TextAreaFor(modelItem => item.Descriptions, new { @class = "form-control content-editor" })
                             </td>
                             <td>
                                
-                                <img style="" src="@Url.Content("~/Content/Image/"+ item.PhotoPath)" width="100em" height="50em" />
+                                <img class="responsive" src="@Url.Content("~/Content/Image/"+ item.PhotoPath)" width="100em" height="50em" />
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.DateAdded)
@@ -101,7 +99,7 @@
                 <div class="dlink1">
                     Trang @( Model.PageCount<Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
                     @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions
-              {
+                    {
                        DisplayLinkToIndividualPages = true,
                        DisplayPageCountAndCurrentLocation = false,
                        MaximumPageNumbersToDisplay = 10,
@@ -110,17 +108,6 @@
 
                    })
                 </div>
-                @*<ul class="pagination">
-                    @{ 
-                        int i, j, k;
-                    }
-                    <li class="page-item"><a class="page-link" href="/Product?Page=@j">Previous</a></li>
-                    @for( i=1; i <= Model.PageCount; i++)
-                    {
-                        <li class="page-item"><a class="page-link" href="/Product?Page=@i "> @i</a></li>
-                    }
-                    <li class="page-item"><a class="page-link" href="/Product?Page=@k">Next</a></li>
-                </ul>*@
             </div>
         </div>
     </div>

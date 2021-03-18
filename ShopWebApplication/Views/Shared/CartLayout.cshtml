@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="~/css/Home.css" />
+    <link rel="stylesheet" href="~/css/HomeLayout.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -14,26 +14,26 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="https://use.fontawesome.com/1eaef4f5cb.js"></script>
     <link href="~/Scripts/jquery.unobtrusive-ajax.min.js" />
-
-    <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 
-<body style="background-color: #f7f7f7 !important;">
+<body style="background-color: #efefef !important;">
     <div>
         <div class="header">
             <div class="khung-logo">
-                <div class="container">
+                <div class="container ">
                     <div class="row">
                         <div class="col-xs-12 col-md-2">
                             <a href="~/Home/Index"><img class="img-fluid" src="~/Image/iconHome/logo.png" alt="logo" /></a>
                         </div>
-
                         <div class="col-xs-12 col-md-6 thanh-tim-kiem">
-                            <div id="form_timkiem_13">
-                                <div class="otimkiem_div">
-                                    <input id="otimkiem_13" class="otimkiem" value="Tìm kiếm" /><i class="fa fa-search" aria-hidden="true"></i>
+                            <form action="/Seach/seach">
+                                <div id="form_timkiem">
+                                    <div class="timkiem">
+                                        <input id="otimkiem" value="" name="keySeach" />
+                                        <button class="otimkiem" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
 
                         @Html.Action("CartPatial", "Cart")
@@ -44,7 +44,7 @@
                                 Customer tk = (Customer)Session["taiKhoan"];
                                 <i style="color:#fe708a " class="fa fa-user-o "></i>
                                 <span>@tk.CustomerName</span><br />
-                                <a href="/Customer/LogOut">Đăng Xuất</a>
+                                <a href="/Home/LogOut">Đăng Xuất</a>
                             }
                             else
                             {
@@ -52,8 +52,8 @@
                                 <strong style="color: #000;">Tài khoản</strong>
                                 <br />
                                 <span style="font-size:12px;color:#777">
-                                    <a href="/Customer/Login">Đăng nhập</a>,
-                                    <a href="/Customer/Register">Đăng ký</a>
+                                    <a href="/Home/Login">Đăng nhập</a>,
+                                    <a href="/Home/LogOut">Đăng ký</a>
                                 </span>
 
                             }
@@ -68,7 +68,17 @@
                     <div class="col-250">
                         <div class="dropdowncus left">
                             <button class="dropbtncus"><i class="fa fa-bars"></i> <strong>DANH MỤC SẢN PHẨM</strong></button>
-
+                            <div class="dropdowncus-content" style="display:none; ">
+                                <a href=""><img width="18px" height="18px" src="~/Image/iconHome/slider_index_link_1.png" /> Thời trang nữ</a>
+                                <a href=""><img width="18px" height="18px" src="~/Image/iconHome/slider_index_link_2.png" /> Thời trang nam</a>
+                                <a href=""><img width="18px" height="18px" src="~/Image/iconHome/slider_index_link_3.png" /> Thời trang mẹ &amp; bé</a>
+                                <a href=""><img width="18px" height="18px" src="~/Image/iconHome/slider_index_link_4.png" /> Giày dép</a>
+                                <a href=""><img width="18px" height="18px" src="~/Image/iconHome/slider_index_link_5.png" /> Túi ví</a>
+                                <a href=""><img width="18px" height="18px" src="~/Image/iconHome/slider_index_link_6.png" /> Đồng hồ</a>
+                                <a href=""><img width="18px" height="18px" src="~/Image/iconHome/slider_index_link_7.png" /> Trang sức</a>
+                                <a href=""><img width="18px" height="18px" src="~/Image/iconHome/slider_index_link_8.png" /> Mắt kính</a>
+                                <a href=""><img width="18px" height="18px" src="~/Image/iconHome/slider_index_link_9.png" /> Mỹ phẩm</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-700 pull-left">
@@ -81,14 +91,14 @@
                             </ul>
                         </div><!--/.nav-collapse -->
                     </div>
-
+                   
                 </div>
             </nav>
         </div>
 
         @RenderBody()
-        
-        <div class="menu-bottom " >
+
+        <div class="menu-bottom ">
             <div class="container ">
                 <div class="row " style="display:flex; align-items:center">
                     <div class="col-md-3 " style="border-right:1px solid #FFF;height:20px ">

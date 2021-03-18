@@ -14,35 +14,24 @@ html, body {
         display: flex;
         align-items: center;
     }
-
-#otimkiem_13 {
-    width: calc(100% - 37px);
-    padding: 3px 5px;
+input#otimkiem {
+    width: 90%;
     border: 1px solid #fe708a;
-    border-right: none;
-    border-radius: 5px 0px 0px 5px;
-    color: #777;
-    font-style: italic;
-    outline: none
+    border-radius: 7px 0 0 7px;
 }
-
-#form_timkiem_13 .fa {
-    width: 35px;
-    height: 32px;
-    font-size: 17px;
-    padding: 7px 10px 10px;
-    background-color: #fe708a;
-    color: #FFF;
-    border-radius: 0px 5px 5px 0px;
-}
-
+    button.otimkiem {
+        margin-left: -5px !important;
+        border: 0;
+        background-color: #fe708a;
+        padding: 2px 8px !important;
+        border-radius: 0 5px 5px 0 !important;
+    }
 .giohang_box .fa {
     font-size: 35px
 }
-
-.giohang_box {
-    font-size: 13px
-}
+    .giohang_box {
+        font-size: 13px
+    }
 
 .navbar {
     background-color: #fe708a !important;
@@ -75,23 +64,22 @@ html, body {
             color: aliceblue;
         }
 
+
 .quangCao {
     width: 58.5%;
     position: relative;
     left: 272px;
 }
-
-.dropdowncus-content a {
-    color: black;
-    padding: 7px 16px;
-    text-decoration: none;
-    display: block;
+.dropdowncus {
+    position: relative;
+    background-color: #ff9d06;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
 }
-
-    .dropdowncus-content a:hover {
-        border-left: 2px solid #fe708a
+    .dropdowncus.left:hover + dropdowncus-content {
+        display:block;
     }
-
 .dropbtncus {
     color: white;
     padding: 5px 10px;
@@ -101,18 +89,34 @@ html, body {
     background-color: #ff9d06;
     margin-left: -14px;
 }
+    .dropdowncus-content a {
+        color: black;
+        padding: 7px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdowncus-content {
+        display: none;
+        position: absolute;
+        background-color: #FFF;
+        width: 107%;
+        z-index: 1;
+        height: 409px;
+        cursor: move;
+        margin-left: -14px;
+    }
+    .dropdowncus-content a:hover {
+        border-left: 2px solid #fe708a;
 
-.dropdowncus-content {
+    }
+.hidden-content {
     display: none;
     position: absolute;
-    background-color: #FFF;
-    width: 107%;
-    z-index: 9999;
-    height: 409px;
-    cursor: move;
-    margin-left: -14px;
+    width: 100%;
+    z-index:1;
+    height: 440px;
+    margin-top: 39px;
 }
-
 a {
     text-decoration: none;
     color: inherit
@@ -355,54 +359,10 @@ a:hover {
     /* bottom: -40px; */
 }
 
-.dropdowncus {
-    position: relative;
-    background-color: #ff9d06;
-    display: inline-block;
-    width: 100%;
-    cursor: pointer;
-}
 
-.hidden-content {
-    display: none;
-    position: absolute;
-    width: 100%;
-    z-index: 9999;
-    height: 440px;
-    margin-top: 39px;
-}
 
-.dropdowncus-content a {
-    color: black;
-    padding: 7px 16px;
-    text-decoration: none;
-    display: block;
-}
 
-    .dropdowncus-content a:hover {
-        border-left: 2px solid #fe708a
-    }
 
-.dropbtncus {
-    color: white;
-    padding: 5px 10px;
-    font-size: 15px;
-    border: none;
-    cursor: pointer;
-    background-color: #ff9d06;
-    margin-left: 0px;
-}
-
-.dropdowncus-content {
-    display: none;
-    position: absolute;
-    background-color: #FFF;
-    width: 100%;
-    z-index: 9999;
-    height: 409px;
-    cursor: move;
-    margin-left: 0px;
-}
 
 .menu-bottom {
     width: 100%;

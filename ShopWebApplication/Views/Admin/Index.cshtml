@@ -1,5 +1,5 @@
 ﻿@using ShopWebApplication.Models
-@model Customer
+@model Account
 @{
     Layout = null;
 }
@@ -39,17 +39,17 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    @if(ViewBag.thongbao == "Tài khoảng hoặc mật khẩu không đúng")
-                                    {
-                                        <p class="alert alert-danger">Tài Khoản hoặc mật khẩu không đúng</p>
-                                    }
-                                    <form action="/Customer/Login" method="post" class="user">
+                                    <form action="/Admin/Index" method="post" class="user">
                                         <div class="form-group">
                                             <input type="email" name="Email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="Password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                                         </div>
+                                        @if(ViewBag.error != null)
+                                        {
+                                            <p style="color:red">@ViewBag.error.ToString()</p>
+                                        }
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
@@ -61,12 +61,10 @@
                                         </div>
 
                                         <input type="submit" value="Login" class="btn btn-primary btn-user btn-block" />
-
-                                        <a href="/Customer/Register" class="btn btn-primary btn-user btn-block">Register</a>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="#">Forgot Password?</a>
                                     </div>
                                 </div>
                             </div>

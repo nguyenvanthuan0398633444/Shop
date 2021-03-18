@@ -114,13 +114,16 @@ namespace ShopWebApplication.Controllers
             {
                 Session["taiKhoan"] = ac;
                 //return Content("<scrip>window.location.reload();</scrip>");
+                return RedirectToAction("Index", "home");
             }
             //return Content("Tài khoản hoặc mật khẩu sai");
-            return RedirectToAction("Index", "home");
+            ViewBag.thongbao = "Tài khoảng hoặc mật khẩu không đúng";
+            return View();
         }
         public ActionResult LogOut()
         {
             Session["taiKhoan"] = null;
+            Session["Cart"] = null;
             return RedirectToAction("Index", "home");
         }
     }

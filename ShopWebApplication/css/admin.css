@@ -44,3 +44,8 @@ td.but {
     background-color: #ddd;
     border-radius: 5px;
 }
+.responsive {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+}

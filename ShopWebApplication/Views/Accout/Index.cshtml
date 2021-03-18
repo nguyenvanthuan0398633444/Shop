@@ -57,10 +57,10 @@
                                 </td>
                                 <td class="but">
                                     <button type="button" class="btn btn-outline-warning">
-                                        @Html.ActionLink("Edit", "EditAccount", new { id = item.Email})
+                                        @Html.ActionLink("Edit", "EditAccount", new { id = item.AccountID})
                                     </button>
                                     <button type="button" class="btn btn-outline-danger">
-                                        <a href="/Accout/DeleteAccount/@item.Email" Onclick="return ConfirmDelete();">Delete</a>
+                                        <a href="/Accout/DeleteAccount/@item.AccountID" Onclick="return ConfirmDelete();">Delete</a>
                                     </button>
 
                                     <script>

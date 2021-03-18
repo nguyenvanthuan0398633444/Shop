@@ -30,6 +30,7 @@ namespace ShopWebApplication.Controllers
             int pageNumber = (page ?? 1);
             return View(list.OrderBy(n => n.Email).ToPagedList(pageNumber, pageSize));
         }
+        // new Accout
         [HttpGet]
         public ActionResult NewAccount()
         {
@@ -53,19 +54,29 @@ namespace ShopWebApplication.Controllers
                 Response.StatusCode = 404;
                 return null;
             }
-            db.Accounts.Add(pd);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            Account acc = db.Accounts.FirstOrDefault(n => n.Email == pd.Email);
+            if ( acc == null)
+            {
+                db.Accounts.Add(pd);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                 return View();
+            }
+           
         }
+        //edit
         [HttpGet]
-        public ActionResult EditAccount(string id)
+        public ActionResult EditAccount(int id)
         {
             if (id == null)
             {
                 Response.StatusCode = 404;
                 return null;
             }
-            Account pd = db.Accounts.SingleOrDefault(n => n.Email == id);
+            Account pd = db.Accounts.SingleOrDefault(n => n.AccountID == id);
             if (pd == null)
             {
                 return HttpNotFound();
@@ -73,6 +84,7 @@ namespace ShopWebApplication.Controllers
 
             return View(pd);
         }
+        
         [HttpPost]
         public ActionResult EditAccount(Account model, HttpPostedFileBase PhotoPath)
         {
@@ -99,15 +111,16 @@ namespace ShopWebApplication.Controllers
             }
             return View(model);
         }
+        // delete
         [HttpGet]
-        public ActionResult DeleteAccount(string id)
+        public ActionResult DeleteAccount(int id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Account model = db.Accounts.SingleOrDefault(n => n.Email == id);
+            Account model = db.Accounts.SingleOrDefault(n => n.AccountID == id);
             if (model == null)
             {
                 return HttpNotFound();
@@ -116,30 +129,6 @@ namespace ShopWebApplication.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        //[HttpGet]
-        //public ActionResult Login()
-        //{
-        //    return View();
-        //}
-        //[HttpPost]
-        //public ActionResult Login(FormCollection f)
-        //{
-        //    string email = f["Email"].ToString();
-        //    string pass = f["Password"].ToString();
-        //    Account ac = db.Accounts.SingleOrDefault(n => n.Email == email && n.Password == pass);
-        //    if (ac != null)
-        //    {
-        //        Session["taiKhoan"] = ac;
-        //        //return Content("<scrip>window.location.reload();</scrip>");
-        //    }
-        //    //return Content("Tài khoản hoặc mật khẩu sai");
-        //    return RedirectToAction("Index", "home");
-        //}
-        //public ActionResult LogOut()
-        //{
-        //    Session["taiKhoan"] = null;
-        //    return RedirectToAction("Index", "home");
-        //}
 
     }
 }

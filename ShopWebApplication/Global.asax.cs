@@ -30,6 +30,7 @@ namespace ShopWebApplication
                 Context.User = userPrincipal;
             }
         }
+       
     }
     
 

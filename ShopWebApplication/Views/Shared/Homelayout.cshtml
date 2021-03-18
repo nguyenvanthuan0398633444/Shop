@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="~/css/Home.css" />
+    <link rel="stylesheet" href="~/css/HomeLayout.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -14,27 +14,28 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="https://use.fontawesome.com/1eaef4f5cb.js"></script>
     <link href="~/Scripts/jquery.unobtrusive-ajax.min.js" />
-    <link  href="~/Scripts/jquery-3.4.1.min.js"/>
-    <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
+    <link  href="~/Scripts/jquery-3.4.1.min.js"/> 
 </head>
 
 <body style="background-color: #f7f7f7 !important;">
     <div>
         <div class="header">
             <div class="khung-logo">
-                <div class="container">
-                    <div class="row">
+                <div class="container ">
+                    <div class="row" >
                         <div class="col-xs-12 col-md-2">
                             <a href="~/Home/Index"><img class="img-fluid" src="~/Image/iconHome/logo.png" alt="logo" /></a>
-                        </div>
-                        
-                            <div class="col-xs-12 col-md-6 thanh-tim-kiem">
-                                <div id="form_timkiem_13">
-                                    <div class="otimkiem_div">
-                                        <input id="otimkiem_13" class="otimkiem" value="Tìm kiếm" /><i class="fa fa-search" aria-hidden="true"></i>
+                        </div>                        
+                        <div class="col-xs-12 col-md-6 thanh-tim-kiem">
+                            <form action="/Seach/seach">
+                                <div id="form_timkiem">
+                                    <div class="timkiem">
+                                        <input id="otimkiem" value="" name="keySeach" />
+                                        <button class="otimkiem" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                                     </div>
                                 </div>
-                            </div>
+                            </form>                           
+                        </div>
                                              
                         @Html.Action("CartPatial","Cart")
 
@@ -44,7 +45,7 @@
                                 Customer tk = (Customer)Session["taiKhoan"];
                                 <i style="color:#fe708a " class="fa fa-user-o "></i>
                                 <span>@tk.CustomerName</span><br />
-                                <a href="/Home/LogOut">Đăng Xuất</a>
+                                <a href="/Customer/LogOut">Đăng Xuất</a>
                             }
                             else
                             {
@@ -52,8 +53,8 @@
                                 <strong style="color: #000;">Tài khoản</strong>
                                 <br />
                                 <span style="font-size:12px;color:#777">
-                                    <a href="/Home/Login">Đăng nhập</a>,
-                                    <a href="/Home/LogOut">Đăng ký</a>
+                                    <a href="/Customer/Login">Đăng nhập</a>,
+                                    <a href="/Customer/Register">Đăng ký</a>
                                 </span>
 
                             }

@@ -37,6 +37,7 @@ namespace ShopWebApplication.Controllers
             int pageNumber = (page ?? 1);
             return View(list.OrderBy(n => n.ProductID).ToPagedList(pageNumber, pageSize));
         }
+        // New Prodduc
         [HttpGet]
         public ActionResult NewProduct()
         {
@@ -45,6 +46,7 @@ namespace ShopWebApplication.Controllers
             return View();
         }
         [ValidateInput(false)]// tắt kiểm tra dữ liệu đầu vào
+
         [HttpPost]
         public ActionResult NewProduct(Product pd, HttpPostedFileBase PhotoPath)
         {
@@ -81,6 +83,7 @@ namespace ShopWebApplication.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        // Edit Product
         [HttpGet]
         public ActionResult EditProduct(int? id)
         {
@@ -148,24 +151,6 @@ namespace ShopWebApplication.Controllers
             }
             return View(model);
         }
-
-        //public ActionResult DeleteProduct(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        Response.StatusCode = 404;
-        //        return null;
-        //    }
-        //    Product pd = db.Products.SingleOrDefault(n => n.ProductID == id);
-        //    if (pd == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    ViewBag.SupplierID = new SelectList(db.Suppliers.OrderBy(n => n.SupplierName), "SupplierID", "SupplierName");
-        //    ViewBag.CategoryID = new SelectList(db.Categories.OrderBy(n => n.CategoryName), "CategoryID", "CategoryName");
-        //    return View(pd);
-        //}
-        //[HttpPost]
         [HttpGet]
         public ActionResult DeleteProduct(int id)
         {

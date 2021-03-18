@@ -43,9 +43,6 @@ namespace ShopWebApplication.Models
             }
 
         }
-        public Cart()
-        {
-
-        }
+        public Cart(){        }
     }
 }

@@ -8,7 +8,7 @@
     <table class="table table table-hover" id="dataTable" width="100%" cellspacing="0">
         <thead>
             <tr>
-                <th>Ảnh</th>
+                <th width="20%">Ảnh</th>
                 <th>Tên</th>
                 <th>Giá</th>
                 <th>Số Lượng </th>
@@ -34,7 +34,7 @@
                     <div class="osoluong">
                           <div class="buttons_added">
                             <input class="minus is-form" type="button" value="-" onclick="document.getElementById('@i.ToString()').value=parseInt(document.getElementById('@i.ToString()').value)-1">
-                            <input id="@i.ToString()" aria-label="quantity" class="input-qty" max="Số tối đa" min="Số tối thiểu" name="" type="number" value="@item.count">
+                            <input id="@i.ToString()" aria-label="quantity" class="input-qty" max="Số tối đa" min="1" name="" type="number" value="@item.count">
                             <input class="plus is-form" type="button" value="+" onclick="document.getElementById('@i.ToString()').value=parseInt(document.getElementById('@i.ToString()').value)+1">
                         </div>
                         <script>
