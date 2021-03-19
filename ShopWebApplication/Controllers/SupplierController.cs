@@ -33,7 +33,6 @@ namespace ShopWebApplication.Controllers
         [HttpGet]
         public ActionResult NewSupplier()
         {
-
             return View();
         }
         [ValidateInput(false)]// tắt kiểm tra dữ liệu đầu vào

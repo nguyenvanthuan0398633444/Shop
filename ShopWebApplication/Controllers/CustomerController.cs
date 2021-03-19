@@ -88,43 +88,6 @@ namespace ShopWebApplication.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult Register()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Register(Customer ac)
-        {
-            NewCustomer(ac);
-            Session["taiKhoan"] = ac;
-            return RedirectToAction("Index", "home");
-        }
-        [HttpGet]
-        public ActionResult Login()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Login(FormCollection f)
-        {
-            string email = f["Email"].ToString();
-            string pass = f["Password"].ToString();
-            Customer ac = db.Customers.SingleOrDefault(n => n.Email == email && n.Password == pass);
-            if (ac != null)
-            {
-                Session["taiKhoan"] = ac;
-                //return Content("<scrip>window.location.reload();</scrip>");
-                return RedirectToAction("Index", "home");
-            }
-            //return Content("Tài khoản hoặc mật khẩu sai");
-            ViewBag.thongbao = "Tài khoảng hoặc mật khẩu không đúng";
-            return View();
-        }
-        public ActionResult LogOut()
-        {
-            Session["taiKhoan"] = null;
-            Session["Cart"] = null;
-            return RedirectToAction("Index", "home");
-        }
+       
     }
 }

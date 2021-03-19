@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <title>Admin </title>
     <link href="~/css/sb-admin-2.min.css" rel="stylesheet"/>
-    <link href="~/css/admin.css"  rel="stylesheet"/>
+    <link href="~/css/AdminLayout.css"  rel="stylesheet"/>
     <link rel="stylesheet" href="~/fonts/vendor/fontawesome-free-5.15.2-web/css/all.min.css">
 </head>
 
@@ -129,7 +129,7 @@
                                         <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/Admin/LogOut" >
+                                    <a class="dropdown-item" href="/Admin/LogOut">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
                                     </a>
                                 </div>
@@ -185,6 +185,13 @@
     <!--JavaScript-->
     <script src="~/fonts/vendor/jquery/jquery.min.js"></script>
     <script src="~/fonts/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+    <script src="https://cdn.tiny.cloud/1/5o3g5w92u7yjwf5ypuele2prmpp1g4fzrenlns0r853x7ncr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            tinycomments_author: 'Author name'
+        });
+    </script>
 
 </body>
 

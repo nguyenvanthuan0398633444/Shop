@@ -27,7 +27,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>EMAIL</th>
@@ -52,8 +52,7 @@
                                     @Html.DisplayFor(modelItem => item.Name)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.PhotoPath)
-                                    <img class="rounded-circle" style="border-radius: 50%;" src="@Url.Content("~/Content/Image/"+ item.PhotoPath)" width="50em" height="50em"  />
+                                    <img class="img_accout" src="@Url.Content("~/Content/Image/"+ item.PhotoPath)" />
                                 </td>
                                 <td class="but">
                                     <button type="button" class="btn btn-outline-warning">
@@ -77,17 +76,17 @@
                         }
                     </tbody>
                 </table>
+  
+                <hr />
                 <div class="dlink1">
                     Trang @( Model.PageCount<Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
                 
                     @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions
-              {
+                     {
                        DisplayLinkToIndividualPages = true,
                        DisplayPageCountAndCurrentLocation = false,
                        MaximumPageNumbersToDisplay = 10,
                        LiElementClasses = new string[] { "page-item" }
-
-
                    })
                 </div>
             </div>

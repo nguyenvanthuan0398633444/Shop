@@ -101,11 +101,12 @@ namespace ShopWebApplication.Controllers
             ViewBag.CategoryID = new SelectList(db.Categories.OrderBy(n => n.CategoryName), "CategoryID", "CategoryName");
             return View(pd);
         }
+        [ValidateInput(false)]
         [HttpPost]
         public ActionResult EditProduct(Product model, HttpPostedFileBase PhotoPath)
         {
-            ViewBag.SupplierID = new SelectList(db.Suppliers.OrderBy(n => n.SupplierName), "SupplierID", "SupplierName");
-            ViewBag.CategoryID = new SelectList(db.Categories.OrderBy(n => n.CategoryName), "CategoryID", "CategoryName");
+            ViewBag.SupplierID = new SelectList(db.Suppliers.OrderBy(n => n.SupplierName), "SupplierID", "SupplierName",model.SupplierID);
+            ViewBag.CategoryID = new SelectList(db.Categories.OrderBy(n => n.CategoryName), "CategoryID", "CategoryName",model.CategoryID);
             //lay ten anh
             var fileName = Path.GetFileName(PhotoPath.FileName);
             // lay anh chuyen vao thu muc
@@ -116,33 +117,7 @@ namespace ShopWebApplication.Controllers
             //ViewBag.tenHinh = "";
             model.PhotoPath = fileName;
 
-            //if (PhotoPath.ContentLength > 0)
-            //{
-            //    //lay ten anh
-            //    var fileName = Path.GetFileName(PhotoPath.FileName);
-            //    // lay anh chuyen vao thu muc
-            //    var path = Path.Combine(Server.MapPath("~/Content/Image"), fileName);
-            //    // neu anh co roi thi ra thong bao loi
-            //    if (System.IO.File.Exists(path))
-            //    {
-            //        ViewBag.upload = "hinh da ton tai";
-            //        return View();
-            //    }
-            //    else
-            //    {
-            //        //lay anh dua vao thu muc hinh anh
-            //        PhotoPath.SaveAs(path);
-            //        //Session["tenHinh"] = PhotoPath.FileName;
-            //        //ViewBag.tenHinh = "";
-            //        model.PhotoPath = fileName;
-            //    }
-
-            //}
-            //else
-            //{
-            //    Response.StatusCode = 404;
-            //    return null;
-            //}
+            
             if (ModelState.IsValid)
             {
                 db.Entry(model).State = System.Data.Entity.EntityState.Modified;

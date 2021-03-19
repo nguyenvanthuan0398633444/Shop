@@ -44,8 +44,23 @@ td.but {
     background-color: #ddd;
     border-radius: 5px;
 }
-.responsive {
-    width: 100%;
-    max-width: 100px;
-    height: auto;
+.img_accout {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 2px;
+    width: 50px;
+}
+button.btn-index {
+    padding: 2px 5px;
+}
+input.col-md-8{
+   margin:0.75em 0;
+   border:1px solid;
+   border-radius:5px;
+}
+select.col-md-8 {
+    margin: 0.75em 0;
+    padding: 2px 0;
+    border: 1px solid;
+    border-radius: 5px;
 }

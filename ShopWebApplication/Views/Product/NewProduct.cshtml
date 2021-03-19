@@ -8,78 +8,53 @@
 
 @using (Html.BeginForm("NewProduct", "Product", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
-    @Html.AntiForgeryToken()
-
 <div class="form-horizontal">
     <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
     <div class="form-group ">
-        @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "control-label col-md-1" })
-        <div class="col-md-5">
-            @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <label class="col-md-3">Name:</label>
+                <input class="col-md-8" name="ProductName" type="text" />
+            </div>
+            <div class="col-md-12">
+                <label class="col-md-3">Supplier:</label>
+                @Html.DropDownList("SupplierID", null, new { @class = "form -control col-md-8" })
+            </div>
+            <div class="col-md-12">
+                <label class="col-md-3">Category:</label>
+                @Html.DropDownList("CategoryID", null, new { @class = "form -control col-md-8" })
+            </div>
+            <div class="col-md-12">
+                <label class="col-md-3">Date Add:</label>
+                <input class="col-md-8" name="DateAdded" type="date" />
+            </div>
+            <div class="col-md-12">
+                <label class="col-md-3">PurchasePrice:</label>
+                <input class="col-md-8" name="PurchasePrice" type="number">
+            </div>
+            <div class="col-md-12">
+                <label class="col-md-3">Price:</label>
+                <input class="col-md-8" name="Price" type="number">
+            </div>
+            <div class="col-md-12">
+                <label class="col-md-3">Total:</label>
+                <input class="col-md-8" name="Amount" type="number">
+            </div>
+            <div class="col-md-12">
+                <label class="col-md-3">Sold:</label>
+                <input class="col-md-8" name="Sold" type="number">
+            </div>
+            <div class="col-md-12">
+                <label class="col-md-3">Picture:</label>
+                <input class="col-md-8 " name="PhotoPath" type="file" style="padding:0;"/>
+            </div>
+
         </div>
-        @Html.LabelFor(model => model.SupplierID, htmlAttributes: new { @class = "control-label col-md-1" })
-        <div class="col-md-5">
-            @Html.DropDownList("SupplierID", null, new { @class = "form -control col-md-12" })
-            @Html.ValidationMessageFor(model => model.SupplierID, "", new { @class = "text-danger" })
+        <div class="col-md-6">
+            <label>Descriptions</label>
+            <textarea name="Descriptions" style="height:100%;"></textarea>
         </div>
     </div>
-    <div class=" form-group productNew">
-        @Html.LabelFor(model => model.DateAdded, htmlAttributes: new { @class = "control-label col-md-1" })
-        <div class="col-md-5">
-            @Html.EditorFor(model => model.DateAdded, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.DateAdded, "", new { @class = "text-danger" })
-        </div>
-        @Html.LabelFor(model => model.CategoryID, htmlAttributes: new { @class = "control-label col-md-1 " })
-        <div class="col-md-5">
-            @Html.DropDownList("CategoryID", null, new { @class = "form -control col-md-12" })
-            @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group productNew">
-        @Html.LabelFor(model => model.Descriptions, htmlAttributes: new { @class = "control-label col-md-1" })
-        <div class="col-md-11">
-            @Html.EditorFor(model => model.Descriptions, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Descriptions, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group productNew">
-        @Html.LabelFor(model => model.PurchasePrice, htmlAttributes: new { @class = "control-label col-md-1" })
-        <div class="col-md-2">
-            @Html.EditorFor(model => model.PurchasePrice, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.PurchasePrice, "", new { @class = "text-danger" })
-        </div>
-
-        @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-1" })
-        <div class="col-md-2">
-            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
-        </div>
-
-        @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-1" })
-        <div class="col-md-2">
-            @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
-        </div>
-
-        @Html.LabelFor(model => model.Sold, htmlAttributes: new { @class = "control-label col-md-1" })
-        <div class="col-md-2">
-            @Html.EditorFor(model => model.Sold, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Sold, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-
-    <div class="form-group productNew">
-        @Html.LabelFor(model => model.PhotoPath, htmlAttributes: new { @class = "control-label col-md-1" })
-        <div class="col-md-10">
-            <input name="PhotoPath" type="file" />
-            <span>@ViewBag.upload</span>
-        </div>
-    </div>
-
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <button type="button" class="btn btn-secondary">@Html.ActionLink("Back to List", "Index")</button>
@@ -88,5 +63,8 @@
     </div>
 </div>
 }
+
+
+
 
 

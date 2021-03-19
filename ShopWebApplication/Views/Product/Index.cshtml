@@ -28,13 +28,12 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                     <thead class="thead-dark">
                         <tr>
                             <th>NAME</th>
                             <th>SUPPLIER</th>
                             <th>CATEGORY</th>
-                            <th>DESCRIPTIONS</th>
                             <th>PHOTO PATH</th>
                             <th>DATE ADDED</th>
                             <th>PURCHASE PRICE</th>
@@ -57,12 +56,8 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.Category.CategoryName)
                             </td>
-                            <td>
-                                @Html.TextAreaFor(modelItem => item.Descriptions, new { @class = "form-control content-editor" })
-                            </td>
-                            <td>
-                               
-                                <img class="responsive" src="@Url.Content("~/Content/Image/"+ item.PhotoPath)" width="100em" height="50em" />
+                            <td>                              
+                                <img class="responsive" src="@Url.Content("~/Content/Image/"+ item.PhotoPath)" style="max-width:5rem;width:100%;height:auto;"/>
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.DateAdded)
@@ -96,6 +91,7 @@
                         }
                     </tbody>
                 </table>
+                <hr />
                 <div class="dlink1">
                     Trang @( Model.PageCount<Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
                     @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions

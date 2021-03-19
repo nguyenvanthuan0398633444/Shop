@@ -278,7 +278,7 @@
     <Content Include="Content\Image\hinh-dep-19.jpg" />
     <Content Include="Content\Image\tải xuống.jpg" />
     <Content Include="Content\PagedList.css" />
-    <Content Include="css\admin.css" />
+    <Content Include="css\AdminLayout.css" />
     <Content Include="css\HomeLayout.css" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
@@ -2200,7 +2200,6 @@
     <Content Include="Views\Supplier\NewSupplier.cshtml" />
     <Content Include="Views\Supplier\EditSupplier.cshtml" />
     <Content Include="Views\Accout\NewAccount.cshtml" />
-    <Content Include="Views\Accout\indexx.cshtml" />
     <Content Include="Views\Accout\EditAccount.cshtml" />
     <Content Include="Views\Accout\Register.cshtml" />
     <Content Include="Views\Accout\Login.cshtml" />
@@ -2217,6 +2216,9 @@
     <Content Include="Views\Seach\Seach.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Dashboard\Error.cshtml" />
+    <Content Include="Views\Product\EditProduct1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

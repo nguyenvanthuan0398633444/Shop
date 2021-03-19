@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0436e6801ffd4f3e8bcf67148ade403a" Name="Diagram1">
+      <Diagram DiagramId="898385f29435437b92a57f41ff20ca86" Name="Diagram1">
         <EntityTypeShape EntityType="ShopModel.Account" Width="1.5" PointX="8" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ShopModel.Account_type" Width="1.5" PointX="5.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Account_type" Width="1.5" PointX="5.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ShopModel.Account_Power" Width="1.5" PointX="8" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ShopModel.Category" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="ShopModel.Customer" Width="1.5" PointX="2.75" PointY="6.875" IsExpanded="true" />
