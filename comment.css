@@ -1,0 +1,129 @@
+body {
+    background-color: rgb(231, 231, 231);
+}
+.main {
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 5px 5px 5px 5px rgba(99, 99, 99, 0.205);
+}
+/* header */
+.header {
+    height: 50px;
+    background-color: #fff;
+}
+/* article */
+.article {
+    height: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding: 0;
+    box-shadow: 5px 5px 5px 5px rgba(99, 99, 99, 0.205);
+}
+.article-top{
+    border-radius:20px 20px 0 0 ;
+    width: 100%;
+    height: 280px; 
+    background-image: url(Capture.PNG);
+}
+.add-event {  
+    width: 85%;
+    margin: auto;
+    position: relative;
+    top: 40%;
+    padding: 4rem;
+}
+
+
+/* form-group */
+.form-group{
+    margin: 0;
+    border-bottom: 2px solid rgb(122, 122, 122);
+    
+}
+.item-event {
+    width: 100%;
+    margin:  0;
+  
+    border: none;
+    font-size: 1.2rem !important;
+}
+.item-event:focus{
+    outline: none;
+}
+.form-group label{
+    margin: 0.5rem ;
+    position: relative;
+    bottom: -30px;
+    font-size: 1.2rem;
+}
+.show{
+    position: relative;
+    bottom: 0px !important;
+    font-size: 0.8rem !important;
+    color: rgb(47, 118, 209);
+    animation-duration: 3s;
+    font-weight: bold;
+}
+/* .under */
+h2 {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+hr {
+    border-top: 2px solid;
+}
+
+.under {
+    width: 25%;
+    font-size: 1.5rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -2.2rem;
+    background-color: rgb(231, 231, 231);
+    z-index: 1;
+
+}
+
+.under p {
+    text-align: center;
+}
+/* .comment */
+.comment-left {
+    margin: 50px;
+}
+
+.comment-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.avata {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.conten {
+    width: 30%;
+    height: 100px;
+    background-color: rgb(148, 188, 233);
+    border-radius: 20px;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 0.75rem solid transparent;
+    border-right: 1rem solid rgb(148, 188, 233);
+    border-bottom: 0.75rem solid transparent;
+}
+
+.comment {
+    width: 70%;
+    margin: auto;
+}

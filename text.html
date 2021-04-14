@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+        body{
+            background-color:rgb(196, 196, 196) ;
+        }
+        .header {
+            height: 100px;
+            background-color: aqua;
+        }
+
+        .main {
+            margin-top: 30px;
+            height: 500px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+        }
+
+        input {
+            border: none;
+            border-bottom: 1px solid;
+            width: 20%;
+            height: 2.3rem;
+        }
+        .dropdown{
+            width: 20%;
+        }
+        .dropdown-toggle{
+            background-color: #fff;
+            border-bottom: 1px solid black;
+            border-radius: 0;
+            width: 100%;
+        }
+        .dropdown-toggle:focus{
+            box-shadow: none;
+        }
+        .dropdown-menu{
+            background-color:#efefef00;
+            border: none;
+        }
+        .dropdown-menu a{
+            color: black;
+            text-decoration: none;
+        }
+        .left{
+            display: flex;
+            justify-content: space-between;
+        }
+        .right{
+            display: flex;
+            flex-direction: row;
+        }
+        input:focus {
+        outline: none;
+        }
+        
+        i.fa-search{
+            font-size: 1.5rem;
+            color: rgb(136, 136, 136);
+            margin: 0.75rem 0 0 -2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid header">
+
+    </div>
+    <div class="container main">
+        <div class="top row">
+            <div class="left col-md-8">
+                <input type="text" class="far fa-user" id="email" placeholder="ユーザーネーム" name="">
+                <input type="text" class="far fa-user" id="email" placeholder="ユーザーネーム" name="">
+                <div class="dropdown ">
+                    <button class="btn dropdown-toggle " type="button" data-toggle="dropdown">ユー
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">HTML</a></li>
+                      <li><a href="#">CSS</a></li>
+                      <li><a href="#">JavaScript</a></li>
+                    </ul>
+                  </div>
+                <input type="text" class="far fa-user" id="email" placeholder="ユーザーネーム" name="">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="right col-md-2">
+                <p style="margin: 5px 20px;" >表示<p>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle " type="button" data-toggle="dropdown">10
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">11</a></li>
+                          <li><a href="#">12</a></li>
+                          <li><a href="#">13</a></li>
+                        </ul>
+                      </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

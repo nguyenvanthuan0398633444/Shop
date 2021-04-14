@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="comment.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="container-fluid header"></div>
+        <div class="container article">
+            <div class="article-top"></div>
+            <form action="#" class="add-event">
+                <div  class="form-group">
+                    <select name="cars" class="item-event" id="list-event">
+                        <option value="volvo">イベント選択</option>
+                        <option value="saab">ユーザーネーム</option>
+                        <option value="opel">ユーザーネーム</option>
+                        <option value="audi">ユーザーネーム</option>
+                    </select>
+                </div>           
+                <div class="form-group">
+                    <label id="t" for="">学校生活での出来事</label>
+                    <input onclick="ShowContent()" type="text" class="item-event" id="email" placeholder="" name="">
+                </div>
+                <div class="form-group">
+                    <label id="k"  for="">自分の行動</label>
+                    <input  type="text" class="item-event"  placeholder="" name="">
+                </div>
+                <div class="form-group">
+                    <label for="">自分の行動</label>
+                    <input type="text" class="item-event "  placeholder="" name="">
+                </div>
+                <div class="form-group">
+                    <label for="">自分の行動</label>
+                    <input type="text" class="item-event"  placeholder="" name="">
+                </div>
+                <div class="form-group">
+                    <label for="">自分の行動</label>
+                    <input type="text" class="item-event" placeholder="" name="">
+                </div>
+                <button class="btn btn-primary" type="submit">登録 </button>
+                <button class="btn btn-danger"> キャンセル</button>
+            </form>
+        </div>
+
+        <div class="under">
+            <p>リプライ（応答）</p>
+        </div>
+        <hr>
+        <div class="comment">
+            <div class="comment-left row ">
+                <div class="col-md-1">
+                    <img class="avata" src="Capture1.jpg" alt="">
+                    <p class="name">thuận</p>
+                </div>
+                <div class="conten col-md-4">
+                    <div class="triangle"></div>
+                    <div>
+                        <p>bạn cứ comment thoải mái đi</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="comment-right row ">
+
+                <div class="conten col-md-4">
+                    <div class="triangle"></div>
+                    <div>
+                        <p>bạn cứ comment thoải mái đi</p>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <img class="avata" src="Capture1.jpg" alt="">
+                    <p class="name">thuận</p>
+                </div>
+
+            </div>
+            <div class="comment-left row ">
+                <div class="col-md-1">
+                    <img class="avata" src="Capture1.jpg" alt="">
+                    <p class="name">thuận</p>
+                </div>
+                <div class="conten col-md-4">
+                    <div class="triangle"></div>
+                    <div>
+                        <p>bạn cứ comment thoải mái đi</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <button type="button" class="btn">Basic</button>
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-info">Info</button>
+            <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-dark">Dark</button>
+            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-link">Link</button>
+        </div>
+
+    </div>
+    </div>
+    <script src="comment.js"></script>
+</body>
+
+</html>
